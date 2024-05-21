@@ -1,0 +1,66 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
+
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<GeneratePackageOnBuild>False</GeneratePackageOnBuild>
+		<Title>Eclypses.MteHttpClient.Blazor.AWS</Title>
+		<PackageId>Eclypses.MteHttpClient.Blazor.AWS</PackageId>
+		<Company>Eclypses Inc</Company>
+		<Description>A substitute for the HttpClient that protects all network traffic with the Eclypses MTE.
+Compatible with Eclypses MTE 4.1.x only when used with AWS.
+		</Description>
+		<PackageOutputPath>D:\src\Sandbox\local.nuget</PackageOutputPath>
+		<FileVersion>1.0.5</FileVersion>
+		<AssemblyVersion>1.0.5</AssemblyVersion>
+		<Version>4.1.1</Version>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<Authors>Eclypses Inc.</Authors>
+		<Copyright>Copyright Eclypses Inc. - 2024</Copyright>
+		<PackageProjectUrl>https://github.com/Eclypses/mte-http-client-blazor-aws</PackageProjectUrl>
+		<PackageReleaseNotes>Package includes the AWS licensed WASM module.</PackageReleaseNotes>
+	</PropertyGroup>
+
+
+	<ItemGroup>
+		<SupportedPlatform Include="browser" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="6.0.29" />
+		<PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="6.0.0" />
+		<PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="6.0.0" />
+		<PackageReference Include="Microsoft.Extensions.Http" Version="6.0.0" />
+		<PackageReference Include="Microsoft.JSInterop" Version="6.0.29" />
+		<PackageReference Include="Microsoft.TypeScript.MSBuild" Version="5.4.4">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Include="..\README.md">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	    <Pack>True</Pack>
+	    <PackagePath>\</PackagePath>
+	  </None>
+	</ItemGroup>
+
+	<ItemGroup>
+		<Content Update="tsconfig.json">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Update="wwwroot\Mte.js">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+			<ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+			<CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+		</Content>
+		<Content Update="wwwroot\mterelay-helper.js">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+			<ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+			<CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+		</Content>
+	</ItemGroup>
+
+</Project>
